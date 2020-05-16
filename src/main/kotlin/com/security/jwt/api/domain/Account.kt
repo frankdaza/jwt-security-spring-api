@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Column
+import javax.persistence.ManyToMany
+import javax.persistence.FetchType
+import javax.persistence.CascadeType
 
 @Entity
 data class Account(
@@ -17,5 +20,7 @@ data class Account(
     @Column(length = 100)
     val password: String,
     val enabled: Boolean,
-    val name: String
+    val name: String,
+    @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    val roles: Set<Role>
 )
