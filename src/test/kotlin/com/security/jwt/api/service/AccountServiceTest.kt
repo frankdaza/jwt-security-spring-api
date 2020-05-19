@@ -25,7 +25,7 @@ class AccountServiceTest {
   }
 
   @Test
-  fun `Should login a user`() {
+  fun `Should return an account by username and password`() {
     val account: Account? = accountService.login(loginDto)
     Assertions.assertNotNull(account)
   }
@@ -34,5 +34,11 @@ class AccountServiceTest {
   fun `Should get all user's roles given an username`() {
     val accountRoles: List<AccountRole> = accountRoleService.findAccountRolesByAccountUsername(username)
     Assertions.assertNotNull(accountRoles)
+  }
+
+  @Test
+  fun `Should return an account by username`() {
+    val account: Account? = accountService.findAccountByUsername(username)
+    Assertions.assertNotNull(account)
   }
 }

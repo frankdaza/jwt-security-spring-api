@@ -14,7 +14,7 @@ data class Account(
     val id: Long,
     @Column(unique = true)
     val username: String,
-    @Column(length = 100)
+    @Column(length = 60)
     val password: String,
     val enabled: Boolean,
     val name: String,

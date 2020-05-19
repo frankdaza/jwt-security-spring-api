@@ -14,4 +14,12 @@ interface AccountService {
    */
   fun login(loginDTO: LoginDTO): Account?
 
+  /**
+   * Finds an account by username.
+   *
+   * @author Frank Edward Daza González.
+   * @param Account?
+   * @return Account? Return an Account if exist, otherwise return a null.
+   */
+  fun findAccountByUsername(username: String): Account?
 }
